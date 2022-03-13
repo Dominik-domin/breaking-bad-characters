@@ -8,15 +8,15 @@ class Character {
   List<String>? occupation;
 
   Character({
-    this.id,
-    this.name,
-    this.birthday,
-    this.img,
-    this.status,
-    this.nickname,
-    this.portrayed,
-    this.category,
-    this.occupation,
+    required this.id,
+    required this.name,
+    required this.birthday,
+    required this.img,
+    required this.status,
+    required this.nickname,
+    required this.portrayed,
+    required this.category,
+    required this.occupation,
   });
 
   factory Character.fromJson(Map<String, dynamic> data) =>
