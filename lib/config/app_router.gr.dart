@@ -21,8 +21,11 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<void>(routeData: routeData, child: const HomePage());
     },
     CharacterDetailsPageRoute.name: (routeData) {
+      final args = routeData.argsAs<CharacterDetailsPageRouteArgs>();
       return MaterialPageX<void>(
-          routeData: routeData, child: const CharacterDetailsPage());
+          routeData: routeData,
+          child:
+              CharacterDetailsPage(key: args.key, character: args.character));
     },
     CharactersListPageRoute.name: (routeData) {
       return MaterialPageX<void>(
@@ -49,11 +52,28 @@ class HomePageRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [CharacterDetailsPage]
-class CharacterDetailsPageRoute extends PageRouteInfo<void> {
-  const CharacterDetailsPageRoute()
-      : super(CharacterDetailsPageRoute.name, path: '/character-details-page');
+class CharacterDetailsPageRoute
+    extends PageRouteInfo<CharacterDetailsPageRouteArgs> {
+  CharacterDetailsPageRoute({Key? key, required Character character})
+      : super(CharacterDetailsPageRoute.name,
+            path: '/character-details-page',
+            args:
+                CharacterDetailsPageRouteArgs(key: key, character: character));
 
   static const String name = 'CharacterDetailsPageRoute';
+}
+
+class CharacterDetailsPageRouteArgs {
+  const CharacterDetailsPageRouteArgs({this.key, required this.character});
+
+  final Key? key;
+
+  final Character character;
+
+  @override
+  String toString() {
+    return 'CharacterDetailsPageRouteArgs{key: $key, character: $character}';
+  }
 }
 
 /// generated route for

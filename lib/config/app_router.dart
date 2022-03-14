@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:breaking_bad_characters/models/character.dart';
 import 'package:breaking_bad_characters/pages/character_details_page.dart';
 import 'package:breaking_bad_characters/pages/characters_list_page.dart';
 import 'package:breaking_bad_characters/pages/home_page.dart';

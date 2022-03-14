@@ -18,8 +18,8 @@ class HomePage extends StatelessWidget {
         child: Center(
           child: ElevatedButton(
             onPressed: () {
-              //  context.router.push(CharactersListPageRoute());
-              CharacterRepository().getCharacters();
+              context.router.push(CharactersListPageRoute());
+              //CharactersRepository().getCharacters();
             },
             child: Text(
               "GO",
