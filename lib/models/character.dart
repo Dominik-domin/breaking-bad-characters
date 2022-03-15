@@ -5,7 +5,7 @@ part 'character.g.dart';
 class Character {
   int? id;
   String? name, birthday, img, status, nickname, portrayed, category;
-  //List<String> occupation;
+  List<String> occupation;
 
   Character({
     required this.id,
@@ -16,7 +16,7 @@ class Character {
     required this.nickname,
     required this.portrayed,
     required this.category,
-    //required this.occupation,
+    required this.occupation,
   });
 
   factory Character.fromJson(Map<String, dynamic> data) =>

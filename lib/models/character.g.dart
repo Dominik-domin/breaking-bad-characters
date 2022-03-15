@@ -15,6 +15,9 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       nickname: json['nickname'] as String?,
       portrayed: json['portrayed'] as String?,
       category: json['category'] as String?,
+      occupation: (json['occupation'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
@@ -26,4 +29,5 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
       'nickname': instance.nickname,
       'portrayed': instance.portrayed,
       'category': instance.category,
+      'occupation': instance.occupation,
     };

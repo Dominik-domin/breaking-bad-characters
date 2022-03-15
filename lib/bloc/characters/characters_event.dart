@@ -5,7 +5,12 @@ abstract class CharactersEvent extends Equatable {
   const CharactersEvent();
 }
 
-class LoadCharactersEvent extends CharactersEvent {
+class LoadCharactersFromNetworkEvent extends CharactersEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class LoadCharactersFromLocalEvent extends CharactersEvent {
   @override
   List<Object> get props => [];
 }

@@ -24,3 +24,11 @@ class CharactersErrorState extends CharactersState {
   @override
   List<Object?> get props => [error];
 }
+
+class CharactersNetworkErrorState extends CharactersState {
+  final bool isLocalStorageEmpty;
+
+  CharactersNetworkErrorState(this.isLocalStorageEmpty);
+  @override
+  List<Object?> get props => [isLocalStorageEmpty];
+}

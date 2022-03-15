@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:http/http.dart' as http;
 import 'package:breaking_bad_characters/models/character.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,9 +17,7 @@ class CharactersRepository {
 
     if (response.statusCode == 200) {
       List<Character> characters = [];
-
       _sharedPreferences.setString('characters', response.body);
-
       characters = (json.decode(response.body) as List)
           .map((i) => Character.fromJson(i))
           .toList();
